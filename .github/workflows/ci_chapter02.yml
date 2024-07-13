@@ -1,0 +1,33 @@
+name: test 
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        dir: ["Chapter02"]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+
+      - name: npm ci
+        working-directory: ${{ matrix.dir }}
+        run: npm ci
+
+      - name: Format
+        working-directory: ${{ matrix.dir }}
+        run: npm run check-format
+
+      - name: ESLint
+        working-directory: ${{ matrix.dir }}
+        run: npm run check-lint
+
+      - name: Test
+        working-directory: ${{ matrix.dir }}
+        run: npm test
+
+      - name: Synth
+        working-directory: ${{ matrix.dir }}
+        run: npm run cdk synth
