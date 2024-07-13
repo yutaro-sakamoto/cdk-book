@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        dir: ["Chapter01"]
+        dir: ["Chapter01", "Chapter02"]
     steps:
       - uses: actions/checkout@v4
 

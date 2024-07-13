@@ -1,0 +1,36 @@
+{
+  "name": "chapter02",
+  "version": "0.1.0",
+  "bin": {
+    "chapter02": "bin/chapter02.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "test": "jest",
+    "cdk": "cdk",
+    "lint": "eslint bin/ lib/",
+    "check-lint": "eslint --fix-dry-run bin/ lib/",
+    "format": "prettier --ignore-path .gitignore --write '+(bin|lib)/*.+(js|ts|json)'",
+    "check-format": "prettier --check --ignore-path .gitignore '+(bin|lib)/*.+(js|ts|json)'"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "@types/node": "20.14.9",
+    "@typescript-eslint/eslint-plugin": "^7.16.0",
+    "@typescript-eslint/parser": "^7.16.0",
+    "aws-cdk": "2.149.0",
+    "eslint": "^8.57.0",
+    "jest": "^29.7.0",
+    "prettier": "3.3.2",
+    "ts-jest": "^29.1.5",
+    "ts-node": "^10.9.2",
+    "typescript": "~5.5.3",
+    "typescript-eslint": "^7.16.0"
+  },
+  "dependencies": {
+    "aws-cdk-lib": "2.149.0",
+    "constructs": "^10.0.0",
+    "source-map-support": "^0.5.21"
+  }
+}
