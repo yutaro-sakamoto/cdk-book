@@ -15,3 +15,11 @@ jobs:
       - name: npm ci
         working-directory: ${{ matrix.dir }}
         run: npm ci
+
+      - name: Format
+        working-directory: ${{ matrix.dir }}
+        run: npm run check-format
+
+      - name: ESLint
+        working-directory: ${{ matrix.dir }}
+        run: npm run check-lint
