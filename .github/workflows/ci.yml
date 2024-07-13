@@ -1,0 +1,17 @@
+name: test 
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        dir: ["Chapter01"]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+
+      - name: npm ci
+        working-directory: ${{ matrix.dir }}
+        run: npm ci
