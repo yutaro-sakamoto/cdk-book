@@ -11,8 +11,8 @@
     "cdk": "cdk",
     "lint": "eslint bin/ lib/",
     "check-lint": "eslint --fix-dry-run bin/ lib/",
-    "format": "prettier --ignore-path .gitignore --write '**/*.+(js|ts|json)'",
-    "check-format": "prettier --check --ignore-path .gitignore --write '**/*.+(js|ts|json)'"
+    "format": "prettier --ignore-path .gitignore --write '+(bin|lib)/*.+(js|ts|json)'",
+    "check-format": "prettier --check --ignore-path .gitignore '+(bin|lib)/*.+(js|ts|json)'"
   },
   "devDependencies": {
     "@types/jest": "^29.5.12",
