@@ -61,6 +61,16 @@ jobs:
         run: npm run check-lint
 ```
 
+# コンテナをデプロイする際の注意
+
+WSL2上でWindowsのDockerが使用されている状況では、
+EC2のためにWSL2上でビルドしたDockerコンテナをデプロイすることには失敗した。
+そこで、WSL2上にDockerをインストールすることで解決した。
+
+* https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository
+* https://medium.com/@praveenadoni4456/error-got-permission-denied-while-trying-to-connect-to-the-docker-daemon-socket-at-e68bfab8146a
+
+
 # 参考リンク
 
 * [組織内での AWS CDK 利用拡大のためのベストプラクティス](https://aws.amazon.com/jp/blogs/news/best-practices-for-scaling-aws-cdk-adoption-within-your-organization/)
