@@ -15,7 +15,6 @@ export class S3Bucket extends Construct {
         this.bucket = new Bucket(scope, 'Bucket-S3', {
             bucketName,
             removalPolicy: RemovalPolicy.DESTROY,
-            publicReadAccess: true
         })
     }
 }
