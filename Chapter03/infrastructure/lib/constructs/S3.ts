@@ -17,10 +17,10 @@ export class S3 extends Construct {
       bucketName: `chapter-3-web-bucket-${uuidv4()}`,
       websiteIndexDocument: 'index.html',
       websiteErrorDocument: 'index.html',
-      //publicReadAccess: true,
+      publicReadAccess: true,
       blockPublicAccess: BlockPublicAccess.BLOCK_ACLS,
       accessControl: BucketAccessControl.BUCKET_OWNER_FULL_CONTROL,
-      //removalPolicy: RemovalPolicy.DESTROY,
+      removalPolicy: RemovalPolicy.DESTROY,
       //autoDeleteObjects: true,
     });
 
