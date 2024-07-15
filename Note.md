@@ -70,6 +70,11 @@ EC2のためにWSL2上でビルドしたDockerコンテナをデプロイする�
 * https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository
 * https://medium.com/@praveenadoni4456/error-got-permission-denied-while-trying-to-connect-to-the-docker-daemon-socket-at-e68bfab8146a
 
+# その他
+
+* S3のpublic access blockを有効にしていると、CDKのデプロイが失敗することがある
+* S3のautoDeleteObjectsを有効にすると、デプロイが失敗する
+  * 暗黙に作成されるLambda関数が古いためと思われる。解決方法は不明。
 
 # 参考リンク
 
