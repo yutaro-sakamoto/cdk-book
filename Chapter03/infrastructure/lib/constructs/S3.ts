@@ -21,13 +21,13 @@ export class S3 extends Construct {
       blockPublicAccess: BlockPublicAccess.BLOCK_ACLS,
       accessControl: BucketAccessControl.BUCKET_OWNER_FULL_CONTROL,
       removalPolicy: RemovalPolicy.DESTROY,
-      //autoDeleteObjects: true,
+      autoDeleteObjects: true,
     });
 
-    //this.web_bucket_deployment = new BucketDeployment(scope, 'WebBucketDeployment', {
-    //  sources: [Source.asset(resolve(__dirname, '..', '..', '..', 'web', 'build'))],
-    //  destinationBucket: this.web_bucket,
-    //});
+    this.web_bucket_deployment = new BucketDeployment(scope, 'WebBucketDeployment', {
+      sources: [Source.asset(resolve(__dirname, '..', '..', '..', 'web', 'build'))],
+      destinationBucket: this.web_bucket,
+    });
 
     new CfnOutput(scope, 'FrontendURL', { value: this.web_bucket.bucketWebsiteUrl });
   }
