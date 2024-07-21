@@ -70,6 +70,42 @@ EC2のためにWSL2上でビルドしたDockerコンテナをデプロイする�
 * https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository
 * https://medium.com/@praveenadoni4456/error-got-permission-denied-while-trying-to-connect-to-the-docker-daemon-socket-at-e68bfab8146a
 
+# test
+
+* Assersion test
+* Snapshot test
+  * 前回のCDKの出力をJSON形式で保存しておき、次回のテスト結果と比較する
+
+# debug
+.vscode/launch.jsonに下記の設定を追加する
+```json
+{
+  "version": "0.2.0",
+  "configurations": [
+      {
+        "type": "node",
+        "request": "launch",
+        "name": "Debug CDK",
+        "skipFiles": [
+            "<node_internals>/**"
+        ],
+        "runtimeArgs": [
+            "-r", "./node_modules/ts-node/register/transpile-only"
+        ],
+        "args": [
+            "${workspaceFolder}/bin/chapter-6.ts"
+        ],
+        "env": {
+          "CDK_MODE": "ONLY_DEV",
+          "CDK_DEFAULT_ACCOUNT": "123456789123",
+          "NODE_ENV": "Development",
+          "CDK_DEFAULT_REGION": "us-east-1"
+        }
+      }
+  ]
+}
+```
+
 # その他
 
 * S3のpublic access blockを有効にしていると、CDKのデプロイが失敗することがある
