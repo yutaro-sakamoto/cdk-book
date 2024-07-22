@@ -106,6 +106,12 @@ EC2のためにWSL2上でビルドしたDockerコンテナをデプロイする�
 }
 ```
 
+# Chapter 07
+* AwsCustomResource
+  * https://qiita.com/skrir/items/71423b3508d8e72d3f87
+* CallAwsService
+  * StepFunctionsで使う
+
 # その他
 
 * S3のpublic access blockを有効にしていると、CDKのデプロイが失敗することがある
