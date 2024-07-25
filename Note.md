@@ -112,6 +112,10 @@ EC2のためにWSL2上でビルドしたDockerコンテナをデプロイする�
 * CallAwsService
   * StepFunctionsで使う
 
+# Chapter 08
+LocalStackでローカル環境でテストを実行できる。
+しかし、LocalStackは完全にAWSのサービスをエミュレートするわけではない。
+AWS SAMといった他の選択肢もある。
 # その他
 
 * S3のpublic access blockを有効にしていると、CDKのデプロイが失敗することがある
